@@ -1,18 +1,19 @@
-import { InjectionKey } from 'vue'
-import { createStore, Mutation, Store } from 'vuex'
-import { User } from "../interface/user";
+import { createStore, Mutation, Store, MutationTree} from 'vuex'
 import { userVuex } from "./user";
-
-export interface State {
-    user: User
+export interface settingState {
+    themeColor : string   
 }
 
-
-export const key: InjectionKey<Store<State>> = Symbol()
-
-export const store = createStore<State>({
+export const store = createStore<settingState>({
     state: {
-        user: userVuex.state
+        themeColor: 'sunny'
     },
-    mutations: userVuex.mutations    
+    mutations : {
+        settingTheme(state, val: boolean) {
+            state.themeColor = val? 'dark' : 'sunny'
+        }
+    },
+    modules: {
+        user: userVuex,
+    }
 })

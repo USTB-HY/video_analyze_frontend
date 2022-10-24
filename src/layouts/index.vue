@@ -9,7 +9,6 @@ import { reqUser } from "../service/user";
 onMounted(async () => {
   let res = await reqUser()
   store.commit('setUser', res)
-
 })
 
 

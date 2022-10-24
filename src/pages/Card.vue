@@ -8,7 +8,7 @@
         <div class="recommend-item-box" v-for="item in recommendList" @click="showDetail">
             <div class="video-prepics"></div>
             <div class="video-Info">
-                <div class="title"><span>内容</span></div>
+                <div class="video-Info-title"><span>内容asdkfgbihgkjhvkjchvqkwefawfwefsdfc</span></div>
                 <div class="number"><span>60</span></div>
             </div>
         </div>
@@ -79,9 +79,11 @@ const recommendList: Ref<Array<string>> = ref(['1', '2', '3', '4', '5', '6', '7'
         }
 
         .video-Info {
+            max-width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
     }
 }
